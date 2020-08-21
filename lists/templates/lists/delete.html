@@ -1,0 +1,21 @@
+{% include 'lists/navbar.html' %}
+
+
+
+
+
+<section class="text-gray-700 body-font relative">
+    <div class="container px-5 py-24 mx-auto">
+        
+        <h1><b>Are you sure you want to delet this note</b> </h1>
+        <form action="{% url 'deletes' list.id %}" method="POST">
+            {% csrf_token %}
+            <a href="{% url 'home' %}"><button type="button" class="btn btn-link">No, don't delete </button></a>
+
+                <button class="text-white bg-red-500 py-2 m-2 px-2 focus:outline-none hover:bg-red-300 rounded"
+                    type="submit">Yes delete this note</button>
+            
+        </form>
+
+    </div>
+</section>
